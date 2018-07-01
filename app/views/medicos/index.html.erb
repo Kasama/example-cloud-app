@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpf</th>
+      <th>Crm</th>
+      <th>Nome</th>
+      <th>Endereco</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicos.each do |medico| %>
+      <tr>
+        <td><%= medico.CPF %></td>
+        <td><%= medico.CRM %></td>
+        <td><%= medico.NOME %></td>
+        <td><%= medico.ENDERECO %></td>
+        <td><%= link_to 'Show', medico %></td>
+        <td><%= link_to 'Edit', edit_medico_path(medico) %></td>
+        <td><%= link_to 'Destroy', medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% will_paginate @medicos %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medico', new_medico_path %>

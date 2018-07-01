@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @medico.CPF %>
+</p>
+
+<p>
+  <strong>Crm:</strong>
+  <%= @medico.CRM %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @medico.NOME %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @medico.ENDERECO %>
+</p>
+
+<%= link_to 'Edit', edit_medico_path(@medico) %> |
+<%= link_to 'Back', medicos_path %>
