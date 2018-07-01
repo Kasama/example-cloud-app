@@ -1,0 +1,32 @@
+<%= form_with(model: paciente, local: true) do |form| %>
+  <% if paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% paciente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :CPF %>
+    <%= form.text_field :CPF %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NOME %>
+    <%= form.text_field :NOME %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ENDERECO %>
+    <%= form.text_field :ENDERECO %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

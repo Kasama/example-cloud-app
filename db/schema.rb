@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_213758) do
+ActiveRecord::Schema.define(version: 2018_07_01_220101) do
 
   create_table "empresas", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.decimal "NU_CNPJ", precision: 10
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2018_07_01_213758) do
     t.string "ST_CONFAZ87"
     t.integer "NU_PF0_INTEIRO"
     t.integer "NU_PF18_INTEIRO"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.decimal "CPF", precision: 10
+    t.string "NOME"
+    t.text "ENDERECO"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
