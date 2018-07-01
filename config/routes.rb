@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :farmaceuticos
   resources :medicos
   resources :pacientes
   resources :receitas

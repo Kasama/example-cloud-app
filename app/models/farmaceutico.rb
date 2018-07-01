@@ -1,0 +1,2 @@
+class Farmaceutico < ApplicationRecord
+end

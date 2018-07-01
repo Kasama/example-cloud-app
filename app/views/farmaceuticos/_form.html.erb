@@ -1,0 +1,32 @@
+<%= form_with(model: farmaceutico, local: true) do |form| %>
+  <% if farmaceutico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(farmaceutico.errors.count, "error") %> prohibited this farmaceutico from being saved:</h2>
+
+      <ul>
+      <% farmaceutico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :CPF %>
+    <%= form.text_field :CPF %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NOME %>
+    <%= form.text_field :NOME %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ENDERECO %>
+    <%= form.text_area :ENDERECO %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

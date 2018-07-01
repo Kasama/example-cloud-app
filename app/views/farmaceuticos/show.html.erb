@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @farmaceutico.CPF %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @farmaceutico.NOME %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @farmaceutico.ENDERECO %>
+</p>
+
+<%= link_to 'Edit', edit_farmaceutico_path(@farmaceutico) %> |
+<%= link_to 'Back', farmaceuticos_path %>
