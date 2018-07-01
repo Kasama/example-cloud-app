@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_220705) do
+ActiveRecord::Schema.define(version: 2018_07_01_221225) do
 
   create_table "empresas", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.decimal "NU_CNPJ", precision: 10
     t.string "NO_RAZAO_SOCIAL"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "estoques", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "medicamento_id"
+    t.integer "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medicamento_id"], name: "index_estoques_on_medicamento_id"
   end
 
   create_table "farmaceuticos", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -82,4 +90,5 @@ ActiveRecord::Schema.define(version: 2018_07_01_220705) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "estoques", "medicamentos"
 end
