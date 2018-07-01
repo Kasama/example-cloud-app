@@ -12,6 +12,7 @@
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'substancia', 'substancias'
+  inflect.irregular 'secretaria', 'secretarias'
 end
 
 # These inflection rules are supported but not enabled by default:

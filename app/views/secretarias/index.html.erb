@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Secretarias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th>Municipio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @secretarias.each do |secretaria| %>
+      <tr>
+        <td><%= secretaria.ESTADO %></td>
+        <td><%= secretaria.MUNICIPIO %></td>
+        <td><%= link_to 'Show', secretaria %></td>
+        <td><%= link_to 'Edit', edit_secretaria_path(secretaria) %></td>
+        <td><%= link_to 'Destroy', secretaria, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% will_paginate @secretarias %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Secretaria', new_secretaria_path %>

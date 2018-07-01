@@ -1,0 +1,2 @@
+class Secretaria < ApplicationRecord
+end

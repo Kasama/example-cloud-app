@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @secretaria.ESTADO %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @secretaria.MUNICIPIO %>
+</p>
+
+<%= link_to 'Edit', edit_secretaria_path(@secretaria) %> |
+<%= link_to 'Back', secretarias_path %>
