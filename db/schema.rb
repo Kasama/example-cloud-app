@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_010651) do
+ActiveRecord::Schema.define(version: 2018_07_01_202402) do
 
   create_table "empresas", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.decimal "NU_CNPJ", precision: 10
     t.string "NO_RAZAO_SOCIAL"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "substancias", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "DS_CAS"
+    t.string "DS_SUBSTANCIA"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Substancias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ds cas</th>
+      <th>Ds substancia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @substancias.each do |substancia| %>
+      <tr>
+        <td><%= substancia.DS_CAS %></td>
+        <td><%= substancia.DS_SUBSTANCIA %></td>
+        <td><%= link_to 'Show', substancia %></td>
+        <td><%= link_to 'Edit', edit_substancia_path(substancia) %></td>
+        <td><%= link_to 'Destroy', substancia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% will_paginate @substancias %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Substancia', new_substancia_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: substancia, local: true) do |form| %>
+  <% if substancia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(substancia.errors.count, "error") %> prohibited this substancia from being saved:</h2>
+
+      <ul>
+      <% substancia.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :DS_CAS %>
+    <%= form.text_field :DS_CAS %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DS_SUBSTANCIA %>
+    <%= form.text_field :DS_SUBSTANCIA %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

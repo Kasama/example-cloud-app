@@ -1,0 +1,2 @@
+class Substancia < ApplicationRecord
+end
