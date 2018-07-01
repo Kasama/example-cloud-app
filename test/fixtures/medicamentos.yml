@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NU_REGISTRO: MyString
+  CO_GGREM: 9.99
+  CO_EAN: MyString
+  NO_PRODUTO: MyString
+  TP_PRODUTO: 1
+  TP_LCCT: MyString
+  ST_REST_HOSP: MyString
+  ST_CAP: MyString
+  ST_CONFAZ87: MyString
+  NU_PF0_INTEIRO: 1
+  NU_PF18_INTEIRO: 1
+
+two:
+  NU_REGISTRO: MyString
+  CO_GGREM: 9.99
+  CO_EAN: MyString
+  NO_PRODUTO: MyString
+  TP_PRODUTO: 1
+  TP_LCCT: MyString
+  ST_REST_HOSP: MyString
+  ST_CAP: MyString
+  ST_CONFAZ87: MyString
+  NU_PF0_INTEIRO: 1
+  NU_PF18_INTEIRO: 1

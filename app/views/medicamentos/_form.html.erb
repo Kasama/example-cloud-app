@@ -1,0 +1,72 @@
+<%= form_with(model: medicamento, local: true) do |form| %>
+  <% if medicamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medicamento.errors.count, "error") %> prohibited this medicamento from being saved:</h2>
+
+      <ul>
+      <% medicamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :NU_REGISTRO %>
+    <%= form.text_field :NU_REGISTRO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CO_GGREM %>
+    <%= form.text_field :CO_GGREM %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CO_EAN %>
+    <%= form.text_field :CO_EAN %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NO_PRODUTO %>
+    <%= form.text_field :NO_PRODUTO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :TP_PRODUTO %>
+    <%= form.number_field :TP_PRODUTO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :TP_LCCT %>
+    <%= form.text_field :TP_LCCT %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ST_REST_HOSP %>
+    <%= form.text_field :ST_REST_HOSP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ST_CAP %>
+    <%= form.text_field :ST_CAP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ST_CONFAZ87 %>
+    <%= form.text_field :ST_CONFAZ87 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NU_PF0_INTEIRO %>
+    <%= form.number_field :NU_PF0_INTEIRO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NU_PF18_INTEIRO %>
+    <%= form.number_field :NU_PF18_INTEIRO %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

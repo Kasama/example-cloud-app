@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medicamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nu registro</th>
+      <th>Co ggrem</th>
+      <th>Co ean</th>
+      <th>No produto</th>
+      <th>Tp produto</th>
+      <th>Tp lcct</th>
+      <th>St rest hosp</th>
+      <th>St cap</th>
+      <th>St confaz87</th>
+      <th>Nu pf0 inteiro</th>
+      <th>Nu pf18 inteiro</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicamentos.each do |medicamento| %>
+      <tr>
+        <td><%= medicamento.NU_REGISTRO %></td>
+        <td><%= medicamento.CO_GGREM %></td>
+        <td><%= medicamento.CO_EAN %></td>
+        <td><%= medicamento.NO_PRODUTO %></td>
+        <td><%= medicamento.TP_PRODUTO %></td>
+        <td><%= medicamento.TP_LCCT %></td>
+        <td><%= medicamento.ST_REST_HOSP %></td>
+        <td><%= medicamento.ST_CAP %></td>
+        <td><%= medicamento.ST_CONFAZ87 %></td>
+        <td><%= medicamento.NU_PF0_INTEIRO %></td>
+        <td><%= medicamento.NU_PF18_INTEIRO %></td>
+        <td><%= link_to 'Show', medicamento %></td>
+        <td><%= link_to 'Edit', edit_medicamento_path(medicamento) %></td>
+        <td><%= link_to 'Destroy', medicamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% will_paginate @medicamentos %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medicamento', new_medicamento_path %>
