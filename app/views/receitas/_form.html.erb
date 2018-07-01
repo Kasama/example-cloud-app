@@ -1,0 +1,32 @@
+<%= form_with(model: receita, local: true) do |form| %>
+  <% if receita.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(receita.errors.count, "error") %> prohibited this receita from being saved:</h2>
+
+      <ul>
+      <% receita.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :DATA %>
+    <%= form.date_select :DATA %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DESCRICAO %>
+    <%= form.text_area :DESCRICAO %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prontidao %>
+    <%= form.text_field :prontidao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

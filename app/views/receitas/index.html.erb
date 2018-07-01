@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Receitas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Descricao</th>
+      <th>Prontidao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receitas.each do |receita| %>
+      <tr>
+        <td><%= receita.DATA %></td>
+        <td><%= receita.DESCRICAO %></td>
+        <td><%= receita.prontidao %></td>
+        <td><%= link_to 'Show', receita %></td>
+        <td><%= link_to 'Edit', edit_receita_path(receita) %></td>
+        <td><%= link_to 'Destroy', receita, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% will_paginate @receitas %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receita', new_receita_path %>

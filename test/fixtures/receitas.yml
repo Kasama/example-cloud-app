@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  DATA: 2018-07-01
+  DESCRICAO: MyText
+  prontidao: MyString
+
+two:
+  DATA: 2018-07-01
+  DESCRICAO: MyText
+  prontidao: MyString
