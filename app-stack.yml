@@ -1,0 +1,29 @@
+version: '3.2'
+
+services:
+  app:
+    image: nuvemapp
+    ports:
+      - 3000:3000
+    networks:
+      - mysql-network
+    environment:
+      - "DATABASE_HOST=mysql"
+      - "DATABASE_PASSWORD=password"
+  mysql:
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    networks:
+      - mysql-network
+    environment:
+      - "MYSQL_ROOT_PASSWORD=password"
+      - "MYSQL_DATABASE=medicamentos"
+    volumes:
+      - ./data:/var/lib/mysql
+
+networks:
+  mysql-network:
+    driver: overlay
+    external: false
+
