@@ -2,10 +2,10 @@ class CreateMedicamentos < ActiveRecord::Migration[5.2]
   def change
     create_table :medicamentos do |t|
       t.string :NU_REGISTRO
-      t.decimal :CO_GGREM
+      t.integer :CO_GGREM, limit: 12
       t.string :CO_EAN
       t.string :NO_PRODUTO
-      t.integer :TP_PRODUTO
+      t.integer :TP_PRODUTO, limit: 12
       t.string :TP_LCCT
       t.string :ST_REST_HOSP
       t.string :ST_CAP
