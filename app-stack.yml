@@ -10,6 +10,8 @@ services:
     environment:
       - "DATABASE_HOST=mysql"
       - "DATABASE_PASSWORD=password"
+    volumes:
+      - .:/app
   mysql:
     image: mysql:5.6
     ports:
