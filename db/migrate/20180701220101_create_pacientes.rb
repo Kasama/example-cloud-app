@@ -1,7 +1,7 @@
 class CreatePacientes < ActiveRecord::Migration[5.2]
   def change
     create_table :pacientes do |t|
-      t.integer :CPF, limit: 12
+      t.integer :CPF, limit: 8
       t.string :NOME
       t.text :ENDERECO
 
