@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#index'
+  root to: 'empresas#index'
   resources :estoques
   resources :farmaceuticos
   resources :medicos
