@@ -1,0 +1,27 @@
+version: '3.2'
+
+services:
+  ganglia:
+    image: n0needt0/docker-ganglia
+    networks:
+      - monitoring-network
+    ports:
+      - 8484:80
+      - 8649:8649
+    volumes:
+      - ./gmetad.conf:/etc/ganglia/gmetad.conf
+  graphite:
+    image: graphiteapp/graphite-statsd
+    networks:
+      - monitoring-network
+    ports:
+      - 8089:80
+      - 2003-2004:2003-2004
+      - 2023-2024:2023-2024
+      - 8125:8125/udp
+      - 8126:8126
+
+networks:
+  monitoring-network:
+    driver: overlay
+    external: false

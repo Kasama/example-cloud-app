@@ -67,6 +67,18 @@ docker stack deploy -c app-stack.yml app
 
 ---
 
+Agora a aplicação está pronta para ser utilizada, sendo servida na porta 3000 do nó manager do swarm
+
+### Monitoramento com Ganglia
+
+Para monitoramento da aplicação, foi utilizada a ferramenta Ganglia com Graphite. Para executar essa stack, navegue para a pasta `monitoring` e execute o comando:
+```
+docker stack deploy -c monitoring-stack.yml monitoring
+```
+
+As dashboards de monitoramento do Graphite devem estar visiveis na porta 8089 do nó manager do swarm
+
+
 
 
 
