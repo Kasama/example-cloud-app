@@ -10,7 +10,7 @@ services:
     volumes:
       - "./tsung:/usr/local/tsung"
     ports:
-      - "8080:8091"
+      - "8191:8091"
     environment:
       - "TSUNG_CONFIG=/usr/local/tsung/tsung.xml"
     deploy:
