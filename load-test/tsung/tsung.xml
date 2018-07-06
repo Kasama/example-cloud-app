@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd">
+<tsung loglevel="notice" version="1.0">
+  <clients>
+    <client host="tsung-master" cpu="2" maxusers="30000" weight="1"/>
+    <client host="tsung-slave1" cpu="2" maxusers="60000" weight="2"/>
+    <client host="tsung-slave1" cpu="2" maxusers="120000" weight="3"/>
+  </clients>
+
+  <servers>
+    <server host="app_app" port="3000" type="tcp"></server>
+  </servers>
+
+  <load>
+    <!-- 50 users a second for 3 minutes == 9000 sessions -->
+    <arrivalphase phase="1" duration="3" unit="minute">
+      <users arrivalrate="50" unit="second"></users>
+    </arrivalphase>
+    <!-- 100 users a second for 3 minutes == 18000 sessions -->
+    <arrivalphase phase="2" duration="3" unit="minute">
+      <users arrivalrate="100" unit="second"></users>
+    </arrivalphase>
+    <!-- 200 users a second for 6 minutes == 72000 sessions -->
+    <arrivalphase phase="3" duration="6" unit="minute">
+      <users arrivalrate="200" unit="second"></users>
+    </arrivalphase>
+  </load>
+
+
+  <sessions>
+    <session name="insert" weight="1" type="ts_http">
+      <!-- Não foi possível ler dados dos arquivos CSV -->
+      <!--<setdynvars sourcetype="file" fileid="pessoas.csv" delimiter="," order="iter">
+        <var name="nome" />
+        <var name="end" />
+        <var name="cpf" />
+      </setdynvars>
+      <setdynvars sourcetype="file" fileid="substancias.csv" delimiter="," order="iter">
+        <var name="ds_cas" />
+        <var name="substancia" />
+      </setdynvars>
+      <setdynvars sourcetype="file" fileid="estoque.csv" delimiter="," order="iter">
+        <var name="id" />
+        <var name="quantidade" />
+      </setdynvars>
+      <request>
+        <http url="/paciente/create" method="POST" version="1.1" contents="cpf=%%_cpf%%&amp;nome=%%_nome%%&amp;endereco=%%_end%%"></http>
+      </request>
+      <request>
+        <http url="/substancia/create" method="POST" version="1.1" contents="cas%%_ds_cas%%&amp;sub=%%_substancia%%"></http>
+      </request>
+      <request>
+        <http url="/estoque/:id=%%_id%%" method="POST" version="1.1"></http>
+      </request>
+      -->
+      <request>
+        <http url="/medicamentos" method="GET" version="1.1" ></http>
+      </request>
+      <thinktime value="20" random="true"></thinktime>
+    </session>
+  </sessions>
+</tsung>
+<xml>

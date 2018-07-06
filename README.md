@@ -69,14 +69,24 @@ docker stack deploy -c app-stack.yml app
 
 Agora a aplicação está pronta para ser utilizada, sendo servida na porta 3000 do nó manager do swarm
 
-### Monitoramento com Ganglia
+### Monitoramento com Ganglia e Graphite
 
-Para monitoramento da aplicação, foi utilizada a ferramenta Ganglia com Graphite. Para executar essa stack, navegue para a pasta `monitoring` e execute o comando:
+Para monitoramento da aplicação, foi utilizada a ferramenta Ganglia com Graphite. Para executar essa stack, que se encontra na pasta `monitoring` e execute o comando:
 ```
-docker stack deploy -c monitoring-stack.yml monitoring
+docker stack deploy -c monitoring/monitoring-stack.yml monitoring
 ```
 
 As dashboards de monitoramento do Graphite devem estar visiveis na porta 8089 do nó manager do swarm
+
+### Teste de carga com Tsung
+
+Para executar o teste de carga, foi utilizada a ferramenta Tsung. Para executar essa ferramenta, que se encontra na pasta `load-test`, basta executar o comando:
+
+```
+docker stack deploy -c load-test/tsung-stack.yml tsung
+```
+
+Durante a execução do teste de carga, é possível analisar os resultados parciais através da interface web do Tsung, disponível na porta 
 
 
 

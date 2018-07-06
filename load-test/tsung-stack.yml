@@ -1,0 +1,47 @@
+version: '3.3'
+
+services:
+  tsung-master:
+    image: dsander/tsung
+    networks:
+      - tsung-network
+      - app_mysql-network
+    command: "start"
+    volumes:
+      - "./tsung:/usr/local/tsung"
+    ports:
+      - "8080:8091"
+    environment:
+      - "TSUNG_CONFIG=/usr/local/tsung/tsung.xml"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  tsung-slave1:
+    image: dsander/tsung
+    networks:
+      - tsung-network
+      - app_mysql-network
+    environment:
+      - "SLAVE=true"
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+  tsung-slave2:
+    image: dsander/tsung
+    networks:
+      - tsung-network
+      - app_mysql-network
+    environment:
+      - "SLAVE=true"
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+
+networks:
+  tsung-network:
+    driver: overlay
+  app_mysql-network:
+    external: true
