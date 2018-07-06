@@ -37,9 +37,9 @@ function setupDatabase() {
 
 function writeEmpresas() {
 
-  //const connection = mysql.createConnection(databaseConnectionSettings);
+  const connection = mysql.createConnection(databaseConnectionSettings);
 
-  //connection.connect();
+  connection.connect();
 
   fs.createReadStream(file)
     .pipe(csv(csvConfig))
@@ -51,9 +51,6 @@ function writeEmpresas() {
       const values = [cnpj, razao];
 
       const sql = mysql.format(sqlFormat, values);
-
-      console.log("Running:", sql);
-      return;
 
       connection.query(sql, (error, results, fields) => {
         if (error) {
@@ -68,7 +65,7 @@ function writeEmpresas() {
       });
     })
     .on('end', function () {
-      //connection.end();
+      connection.end();
     });
 }
 
@@ -159,5 +156,5 @@ function writeMedicamento() {
 
 //setupDatabase();
 writeEmpresas();
-//writeSubstancias();
-//writeMedicamento();
+writeSubstancias();
+writeMedicamento();
